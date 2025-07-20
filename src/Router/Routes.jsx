@@ -23,6 +23,7 @@ import RiderRoute from "../Route/RiderRoute";
 import PendingDeliveries from "../Pages/Dashboard/PendingDeliveries/PendingDeliveries";
 import CompletedDeliveries from "../Pages/Dashboard/CompletedDeliveries/CompletedDeliveries";
 import MyEarnings from "../Pages/Dashboard/MyEarnings/MyEarnings";
+import DashboardHome from "../Pages/Dashboard/DashboardHome/DashboardHome";
 
 export const router = createBrowserRouter([
     {
@@ -71,6 +72,10 @@ export const router = createBrowserRouter([
         element: <PrivateRoute> <DashBoardLayout></DashBoardLayout> </PrivateRoute>,
         children: [
             {
+                index: true,
+                Component: DashboardHome,
+            },
+            {
                 path: 'myParcels',
                 Component: MyParcels,
             },
@@ -88,16 +93,16 @@ export const router = createBrowserRouter([
             },
             //rider route  
             {
-                 path: 'pendingDeliveries',
-                 element: <RiderRoute><PendingDeliveries></PendingDeliveries> </RiderRoute>
+                path: 'pendingDeliveries',
+                element: <RiderRoute><PendingDeliveries></PendingDeliveries> </RiderRoute>
             },
             {
-                 path: 'completedDeliveries',
-                 element: <RiderRoute><CompletedDeliveries></CompletedDeliveries></RiderRoute>
+                path: 'completedDeliveries',
+                element: <RiderRoute><CompletedDeliveries></CompletedDeliveries></RiderRoute>
             },
             {
-                 path: 'myEarnings',
-                 element: <RiderRoute><MyEarnings></MyEarnings></RiderRoute>
+                path: 'myEarnings',
+                element: <RiderRoute><MyEarnings></MyEarnings></RiderRoute>
             },
             //admin route
             {
