@@ -11,20 +11,20 @@ const DashboardHome = () => {
 
 
     if (roleLoading) {
-        <Loading></Loading>
+      return  <Loading></Loading>
     }
 
     if (role === 'user') {
-        <UserDashboard></UserDashboard>
+        return <UserDashboard></UserDashboard>
     }
     else if (role === 'admin') {
-        <AdminDashboard></AdminDashboard>
+       return  <AdminDashboard></AdminDashboard>
     }
     else if (role === 'rider') {
-        <RiderDashboard></RiderDashboard>
+       return <RiderDashboard></RiderDashboard>
     }
     else {
-        <Forbidden></Forbidden>
+       return <Forbidden></Forbidden>
     }
 };
 
